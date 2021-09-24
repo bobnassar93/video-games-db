@@ -19,7 +19,6 @@ import { DetailsComponent } from './components/details/details.component';
 import { GameTabsComponent } from './components/game-tabs/game-tabs.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { ImgPreviewComponent } from './components/img-preview/img-preview.component';
 import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
@@ -29,8 +28,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     HomeComponent,
     DetailsComponent,
     GameTabsComponent,
-    PaginationComponent,
-    ImgPreviewComponent
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

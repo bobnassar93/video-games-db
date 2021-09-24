@@ -36,7 +36,7 @@ export class GameTabsComponent implements OnInit {
 
 @Component({
   selector: 'app-img-preview-dialog',
-  template: '<img src={{data.src}}/>'
+  template: '<img style="width: 100%;" src={{data.src}}/>'
 })
 export class ImagePreviewDialog {
   constructor(
