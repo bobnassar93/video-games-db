@@ -32,8 +32,8 @@
       </p>
     </mat-tab>
     <mat-tab label="Screenshots" *ngIf="game.screenshots?.length">
-      <img class="game-screenshot" *ngFor="let screenshot of game.screenshots" src="{{ screenshot.image }}"
-        alt="screenshot" />
+      <img class="game-screenshot zoom-in" *ngFor="let screenshot of game.screenshots" src="{{ screenshot.image }}"
+        (click)="previewScreenshot(screenshot.image)" alt="screenshot" />
     </mat-tab>
     <mat-tab label="Trailers" *ngIf="game.trailers?.length">
       <video class="game-trailer" controls *ngFor="let trailer of game.trailers">

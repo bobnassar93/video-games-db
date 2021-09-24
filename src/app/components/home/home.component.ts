@@ -36,8 +36,13 @@ export class HomeComponent implements OnInit {
   }
 
   searchGames(sort: string, page: number = 1, search?: string): void {
+    let _search = search;
+
+    if (this.activatedRoute.snapshot.params['game-search']) {
+      _search = this.activatedRoute.snapshot.params['game-search'];
+    }
     this.gameSub = this.httpService
-      .getGameList(sort, page, search)
+      .getGameList(sort, page, _search)
       .subscribe((gameList: APIResponse<Game>) => {
         this.games = gameList.results;
         this.counts = gameList.count;

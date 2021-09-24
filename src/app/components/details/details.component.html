@@ -6,20 +6,27 @@
     <div class="game-content">
       <div class="details-wrapper">
         <div class="game-header">
-          <h1 class="game-header-title">{{ game.name }}</h1>
-          <h2 class="game-header-release-date">
-            Release: {{ game.released | date }}
-          </h2>
-          <p class="game-header-genres">
-            <span *ngFor="let genre of game.genres; let last = last">{{ genre.name }}<span *ngIf="!last">,
-              </span></span>
-          </p>
-          <div class="game-gauge">
-            <mwl-gauge class="two txt-shadow" [max]="100" [dialStartAngle]="180" [dialEndAngle]="0" [value]="gameRating"
-              [animated]="true" [color]="getColor" [animationDuration]="2">
-            </mwl-gauge>
-            <a class="game-gauge-label txt-shadow" target="_blank" href="{{ game.metacritic_url }}">Metacritic</a>
+          <div class="row">
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <h1 class="game-header-title txt-shadow">{{ game.name }}</h1>
+              <h2 class="game-header-release-date txt-shadow">
+                Release: {{ game.released | date }}
+              </h2>
+              <p class="game-header-genres">
+                <span *ngFor="let genre of game.genres; let last = last">{{ genre.name }}<span *ngIf="!last">,
+                  </span></span>
+              </p>
+            </div>
+            <div class="col-sm-12 col-md-6 col-lg-6">
+              <div class="game-gauge">
+                <mwl-gauge class="two txt-shadow" [max]="100" [dialStartAngle]="180" [dialEndAngle]="0"
+                  [value]="gameRating" [animated]="true" [color]="getColor" [animationDuration]="2">
+                </mwl-gauge>
+                <a class="game-gauge-label txt-shadow" target="_blank" href="{{ game.metacritic_url }}">Metacritic</a>
+              </div>
+            </div>
           </div>
+
         </div>
         <app-game-tabs [game]="game"></app-game-tabs>
       </div>

@@ -21,3 +21,9 @@ body * {
 .txt-shadow {
   text-shadow: 0 0 10px black;
 }
+
+.zoom-in {
+  cursor: zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: -webkit-zoom-in;
+}
